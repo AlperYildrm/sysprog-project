@@ -1,0 +1,6 @@
+
+*.o
+*.out
+watchdog
+worker
+*.log
