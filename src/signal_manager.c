@@ -5,29 +5,29 @@
 #include <stdio.h>
 #include <string.h>
 
-volatile sig_atomic_t g_sigchld_received = 0;
-volatile sig_atomic_t g_sigusr1_received = 0;
-volatile sig_atomic_t g_sigalrm_received = 0;
 volatile sig_atomic_t g_shutdown_requested = 0;
+volatile sig_atomic_t g_status_requested = 0;
+volatile sig_atomic_t g_child_terminated = 0;
+volatile sig_atomic_t g_alarm_triggered = 0;
 
 static void handle_sigchld(int sig) {
     (void)sig;
     int saved_errno = errno;
-    g_sigchld_received = 1;
+    g_child_terminated = 1;
     errno = saved_errno;
 }
 
 static void handle_sigusr1(int sig) {
     (void)sig;
     int saved_errno = errno;
-    g_sigusr1_received = 1;
+    g_status_requested = 1;
     errno = saved_errno;
 }
 
 static void handle_sigalrm(int sig) {
     (void)sig;
     int saved_errno = errno;
-    g_sigalrm_received = 1;
+    g_alarm_triggered = 1;
     errno = saved_errno;
 }
 
@@ -47,7 +47,7 @@ static void build_managed_signal_set(sigset_t *set) {
     sigaddset(set, SIGTERM);
 }
 
-int setup_signal_handlers(void) {
+int init_signal_handlers(void) {
     struct sigaction sa;
 
     memset(&sa, 0, sizeof(sa));
