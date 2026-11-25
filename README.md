@@ -48,8 +48,10 @@ restarted while its restart count is below 3; after that it is marked
 ├── workers/
 │   └── worker.c            configurable test child (daemon/normal/crash/stubborn)
 ├── tests/
-│   └── test_scenarios.sh   automated test scenarios
+│   ├── test_scenarios.sh   automated test scenarios
+│   └── sample_logs/        logs saved by the last test run
 └── docs/
+    ├── REPORT.md           report source
     └── REPORT.pdf          project report
 ```
 
@@ -72,6 +74,22 @@ The build produces no warnings.
 ```sh
 ./watchdog
 ```
+
+Run it from the project root: the workers are started as `./worker`, so the
+`worker` binary must be in the current directory (`make run` does this for you).
+
+On start-up the watchdog launches four workers (set in `src/main.c`):
+
+| Name | Command | What it shows |
+|---|---|---|
+| `worker_1` | `./worker daemon` | long-running child, restarted if it is killed |
+| `worker_2` | `./worker daemon` | second long-running child |
+| `worker_3` | `./worker normal 10` | exits with code 0 after 10 s and is not restarted |
+| `worker_4` | `./worker stubborn` | ignores SIGTERM, so shutdown falls back to SIGKILL |
+
+Every 4 seconds a SIGALRM health check (`setitimer`) logs the running PIDs and
+catches any child whose SIGCHLD was missed. On shutdown the watchdog waits up to
+5 seconds after SIGTERM before sending SIGKILL.
 
 The watchdog writes its log to `watchdog.log` in the current directory and also
 echoes each line to the terminal. Every line has the form
@@ -110,12 +128,17 @@ Open a second terminal and find the watchdog PID with `pgrep -x watchdog`.
 Example status report (SIGUSR1):
 
 ```
-[2026-11-24 12:09:51] [STATUS] === SIGUSR1 Process Status Report ===
-[2026-11-24 12:09:51] [STATUS] Name: worker_1 | PID: 822 | State: RUNNING | Restarts: 0/3
-[2026-11-24 12:09:51] [STATUS] Name: worker_2 | PID: 823 | State: RUNNING | Restarts: 0/3
-[2026-11-24 12:09:51] [STATUS] Total: 2 | Running: 2
-[2026-11-24 12:09:51] [STATUS] =====================================
+[2026-11-25 20:13:26] [STATUS] === SIGUSR1 Process Status Report ===
+[2026-11-25 20:13:26] [STATUS] Name: worker_1 | PID: 1502 | State: RUNNING | Restarts: 0/3
+[2026-11-25 20:13:26] [STATUS] Name: worker_2 | PID: 1503 | State: RUNNING | Restarts: 0/3
+[2026-11-25 20:13:26] [STATUS] Name: worker_3 | PID: 1504 | State: RUNNING | Restarts: 0/3
+[2026-11-25 20:13:26] [STATUS] Name: worker_4 | PID: 1505 | State: RUNNING | Restarts: 0/3
+[2026-11-25 20:13:26] [STATUS] Total: 4 | Running: 4
+[2026-11-25 20:13:26] [STATUS] =====================================
 ```
+
+Possible states: `RUNNING`, `EXITED_NORMAL`, `TERMINATED_ERROR`,
+`RESTART_LIMIT_REACHED` (a child that is not running shows PID -1).
 
 ## Tests
 
@@ -134,3 +157,7 @@ watchdog, then prints PASS/FAIL per check and saves the log of every scenario in
 
 Environment variables `WATCHDOG`, `WD_ARGS`, `LOG` and `STARTUP` override the
 defaults (see the top of the script).
+
+The whole run takes about a minute and ends with a summary line. The output and
+logs of the last run on the integrated code (19 passed, 0 failed) are in
+`tests/sample_logs/`, including `test_run_output.txt`.
