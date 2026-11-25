@@ -1,0 +1,29 @@
+[2026-11-25 20:13:46] [INFO] Watchdog started (PID 1712)
+[2026-11-25 20:13:46] [INFO] Started worker_1 (PID 1714): ./worker
+[2026-11-25 20:13:46] [INFO] Started worker_2 (PID 1715): ./worker
+[2026-11-25 20:13:46] [INFO] Started worker_3 (PID 1716): ./worker
+[2026-11-25 20:13:46] [INFO] Started worker_4 (PID 1717): ./worker
+[2026-11-25 20:13:48] [STATUS] === SIGUSR1 Process Status Report ===
+[2026-11-25 20:13:48] [STATUS] Name: worker_1 | PID: 1714 | State: RUNNING | Restarts: 0/3
+[2026-11-25 20:13:48] [STATUS] Name: worker_2 | PID: 1715 | State: RUNNING | Restarts: 0/3
+[2026-11-25 20:13:48] [STATUS] Name: worker_3 | PID: 1716 | State: RUNNING | Restarts: 0/3
+[2026-11-25 20:13:48] [STATUS] Name: worker_4 | PID: 1717 | State: RUNNING | Restarts: 0/3
+[2026-11-25 20:13:48] [STATUS] Total: 4 | Running: 4
+[2026-11-25 20:13:48] [STATUS] =====================================
+[2026-11-25 20:13:49] [INFO] Shutdown mode on: no more restarts or new processes
+[2026-11-25 20:13:49] [INFO] Graceful shutdown initiated
+[2026-11-25 20:13:49] [INFO] Sent signal 15 (Terminated) to worker_1 (PID 1714)
+[2026-11-25 20:13:49] [INFO] Sent signal 15 (Terminated) to worker_2 (PID 1715)
+[2026-11-25 20:13:49] [INFO] Sent signal 15 (Terminated) to worker_3 (PID 1716)
+[2026-11-25 20:13:49] [INFO] Sent signal 15 (Terminated) to worker_4 (PID 1717)
+[2026-11-25 20:13:49] [WARN] worker_1 (PID 1714) was killed by signal 15 (Terminated)
+[2026-11-25 20:13:49] [INFO] Not restarting worker_1: shutdown in progress
+[2026-11-25 20:13:49] [WARN] worker_2 (PID 1715) was killed by signal 15 (Terminated)
+[2026-11-25 20:13:49] [INFO] Not restarting worker_2: shutdown in progress
+[2026-11-25 20:13:49] [WARN] worker_3 (PID 1716) was killed by signal 15 (Terminated)
+[2026-11-25 20:13:49] [INFO] Not restarting worker_3: shutdown in progress
+[2026-11-25 20:13:54] [WARN] Timeout reached (5 s), sending SIGKILL to remaining children
+[2026-11-25 20:13:54] [INFO] Sent signal 9 (Killed) to worker_4 (PID 1717)
+[2026-11-25 20:13:54] [WARN] worker_4 (PID 1717) was killed by signal 9 (Killed)
+[2026-11-25 20:13:54] [INFO] Not restarting worker_4: shutdown in progress
+[2026-11-25 20:13:54] [INFO] Shutdown complete, all children reaped

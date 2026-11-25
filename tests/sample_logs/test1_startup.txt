@@ -1,0 +1,5 @@
+[2026-11-25 20:12:34] [INFO] Watchdog started (PID 1135)
+[2026-11-25 20:12:34] [INFO] Started worker_1 (PID 1137): ./worker
+[2026-11-25 20:12:34] [INFO] Started worker_2 (PID 1138): ./worker
+[2026-11-25 20:12:34] [INFO] Started worker_3 (PID 1139): ./worker
+[2026-11-25 20:12:34] [INFO] Started worker_4 (PID 1140): ./worker
