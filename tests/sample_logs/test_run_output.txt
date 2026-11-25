@@ -1,0 +1,43 @@
+Building...
+
+== Test 1: at least two workers start, PIDs logged ==
+  PASS 4 workers running: 1137 1138 1139 1140
+  PASS every worker PID appears in watchdog.log
+
+== Test 2: normal exit (code 0) is not restarted ==
+  PASS normal worker(s) exited and were not restarted
+  PASS exit code 0 is logged
+
+== Test 3: SIGKILL'd worker is restarted ==
+  PASS PID 1284 was replaced by PID 1297
+  PASS restart is logged
+
+== Test 4: kill the same worker 4 times -> at most 3 restarts ==
+  kill #1 -> restarted as PID 1381
+  kill #2 -> restarted as PID 1398
+  kill #3 -> restarted as PID 1415
+  kill #4 -> not restarted
+  PASS worker was restarted exactly 3 times, then left stopped
+  PASS restart limit is logged
+  PASS watchdog keeps running with the other workers
+
+== Test 5: SIGUSR1 status report ==
+  PASS report header found in watchdog.log
+  PASS 4 child rows in the report
+  PASS watchdog still running after SIGUSR1
+
+== Test 6: graceful shutdown on SIGTERM ==
+  PASS watchdog exited after SIGTERM
+  PASS all 4 workers are gone
+  PASS no defunct (zombie) workers
+
+== Test 6: graceful shutdown on SIGINT ==
+  PASS watchdog exited after SIGINT
+  PASS all 4 workers are gone
+  PASS no defunct (zombie) workers
+
+== Test 7: every log line has [YYYY-MM-DD HH:MM:SS] [LEVEL] ==
+  PASS all 29 lines match the format
+
+Summary: 19 passed, 0 failed, 0 skipped
+Sample logs saved in tests/sample_logs/
