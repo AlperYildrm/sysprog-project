@@ -126,9 +126,10 @@ void log_status_report(void)
 
 void close_logger(void)
 {
+    /* close() is not retried on EINTR: on Linux the descriptor is already
+     * released at that point, and a retry could close an unrelated fd. */
     if (g_log_fd >= 0) {
-        while (close(g_log_fd) == -1 && errno == EINTR)
-            ;
+        (void)close(g_log_fd);
         g_log_fd = -1;
     }
 }
