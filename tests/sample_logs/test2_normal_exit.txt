@@ -1,0 +1,9 @@
+[2026-11-25 20:12:41] [INFO] Watchdog started (PID 1209)
+[2026-11-25 20:12:41] [INFO] Started worker_1 (PID 1211): ./worker
+[2026-11-25 20:12:41] [INFO] Started worker_2 (PID 1212): ./worker
+[2026-11-25 20:12:41] [INFO] Started worker_3 (PID 1213): ./worker
+[2026-11-25 20:12:41] [INFO] Started worker_4 (PID 1214): ./worker
+[2026-11-25 20:12:45] [INFO] Health check: 4 running (PIDs: 1211, 1212, 1213, 1214)
+[2026-11-25 20:12:49] [INFO] Health check: 4 running (PIDs: 1211, 1212, 1213, 1214)
+[2026-11-25 20:12:51] [INFO] worker_3 (PID 1213) exited normally with exit code 0
+[2026-11-25 20:12:53] [INFO] Health check: 3 running (PIDs: 1211, 1212, 1214)

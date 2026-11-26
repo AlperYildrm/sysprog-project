@@ -1,0 +1,22 @@
+[2026-11-25 20:13:39] [INFO] Watchdog started (PID 1637)
+[2026-11-25 20:13:39] [INFO] Started worker_1 (PID 1639): ./worker
+[2026-11-25 20:13:39] [INFO] Started worker_2 (PID 1640): ./worker
+[2026-11-25 20:13:39] [INFO] Started worker_3 (PID 1641): ./worker
+[2026-11-25 20:13:39] [INFO] Started worker_4 (PID 1642): ./worker
+[2026-11-25 20:13:41] [INFO] Shutdown mode on: no more restarts or new processes
+[2026-11-25 20:13:41] [INFO] Graceful shutdown initiated
+[2026-11-25 20:13:41] [INFO] Sent signal 15 (Terminated) to worker_1 (PID 1639)
+[2026-11-25 20:13:41] [INFO] Sent signal 15 (Terminated) to worker_2 (PID 1640)
+[2026-11-25 20:13:41] [INFO] Sent signal 15 (Terminated) to worker_3 (PID 1641)
+[2026-11-25 20:13:41] [INFO] Sent signal 15 (Terminated) to worker_4 (PID 1642)
+[2026-11-25 20:13:41] [WARN] worker_1 (PID 1639) was killed by signal 15 (Terminated)
+[2026-11-25 20:13:41] [INFO] Not restarting worker_1: shutdown in progress
+[2026-11-25 20:13:41] [WARN] worker_2 (PID 1640) was killed by signal 15 (Terminated)
+[2026-11-25 20:13:41] [INFO] Not restarting worker_2: shutdown in progress
+[2026-11-25 20:13:41] [WARN] worker_3 (PID 1641) was killed by signal 15 (Terminated)
+[2026-11-25 20:13:41] [INFO] Not restarting worker_3: shutdown in progress
+[2026-11-25 20:13:46] [WARN] Timeout reached (5 s), sending SIGKILL to remaining children
+[2026-11-25 20:13:46] [INFO] Sent signal 9 (Killed) to worker_4 (PID 1642)
+[2026-11-25 20:13:46] [WARN] worker_4 (PID 1642) was killed by signal 9 (Killed)
+[2026-11-25 20:13:46] [INFO] Not restarting worker_4: shutdown in progress
+[2026-11-25 20:13:46] [INFO] Shutdown complete, all children reaped

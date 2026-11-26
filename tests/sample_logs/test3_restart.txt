@@ -1,0 +1,9 @@
+[2026-11-25 20:13:00] [INFO] Watchdog started (PID 1282)
+[2026-11-25 20:13:00] [INFO] Started worker_1 (PID 1284): ./worker
+[2026-11-25 20:13:00] [INFO] Started worker_2 (PID 1285): ./worker
+[2026-11-25 20:13:00] [INFO] Started worker_3 (PID 1286): ./worker
+[2026-11-25 20:13:00] [INFO] Started worker_4 (PID 1287): ./worker
+[2026-11-25 20:13:02] [WARN] worker_1 (PID 1284) was killed by signal 9 (Killed)
+[2026-11-25 20:13:02] [WARN] Restarting worker_1 (attempt 1/3)
+[2026-11-25 20:13:02] [INFO] Restarted worker_1 with new PID 1297
+[2026-11-25 20:13:04] [INFO] Health check: 4 running (PIDs: 1297, 1285, 1286, 1287)

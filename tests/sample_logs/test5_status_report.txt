@@ -1,0 +1,12 @@
+[2026-11-25 20:13:24] [INFO] Watchdog started (PID 1500)
+[2026-11-25 20:13:24] [INFO] Started worker_1 (PID 1502): ./worker
+[2026-11-25 20:13:24] [INFO] Started worker_2 (PID 1503): ./worker
+[2026-11-25 20:13:24] [INFO] Started worker_3 (PID 1504): ./worker
+[2026-11-25 20:13:24] [INFO] Started worker_4 (PID 1505): ./worker
+[2026-11-25 20:13:26] [STATUS] === SIGUSR1 Process Status Report ===
+[2026-11-25 20:13:26] [STATUS] Name: worker_1 | PID: 1502 | State: RUNNING | Restarts: 0/3
+[2026-11-25 20:13:26] [STATUS] Name: worker_2 | PID: 1503 | State: RUNNING | Restarts: 0/3
+[2026-11-25 20:13:26] [STATUS] Name: worker_3 | PID: 1504 | State: RUNNING | Restarts: 0/3
+[2026-11-25 20:13:26] [STATUS] Name: worker_4 | PID: 1505 | State: RUNNING | Restarts: 0/3
+[2026-11-25 20:13:26] [STATUS] Total: 4 | Running: 4
+[2026-11-25 20:13:26] [STATUS] =====================================
