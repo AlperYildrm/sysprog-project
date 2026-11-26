@@ -11,7 +11,7 @@ subtitle: "BSM308 / SWE-301 System Programming, Term Project 1"
 |---|---|---|
 | Alper Yıldırım | B231202001 | AlperYildrm |
 | Ammar Al Baghajati | B231202553 | Ammarito9 |
-| Ziyad Alboghdady | B23120250 | ziyad-alboghdady |
+| Ziyad Alboghdady | B231202560 | ziyad-alboghdady |
 
 **Public repository:** <https://github.com/AlperYildrm/sysprog-project>
 
@@ -151,7 +151,7 @@ and `worker_4` (stubborn).
 |---|---|---|---|---|
 | S1 Alper Yıldırım | B231202001 | AlperYildrm | #1-#4, #16 | `include/signal_manager.h`, `src/signal_manager.c`, `src/main.c` |
 | S2 Ammar Al Baghajati | B231202553 | Ammarito9 | #5-#9, #16 | `include/process_manager.h`, `src/process_manager.c` |
-| S3 Ziyad Alboghdady | B23120250 | ziyad-alboghdady | #10-#15, #16 | `include/logger.h`, `src/logger.c`, `workers/worker.c`, `Makefile`, `tests/test_scenarios.sh`, `README.md`, `docs/REPORT.pdf` |
+| S3 Ziyad Alboghdady | B231202560 | ziyad-alboghdady | #10-#15, #16 | `include/logger.h`, `src/logger.c`, `workers/worker.c`, `Makefile`, `tests/test_scenarios.sh`, `README.md`, `docs/REPORT.pdf` |
 
 Each module was developed on its own branch by its owner and merged into `main`
 through a pull request (#17-#21 and later).
