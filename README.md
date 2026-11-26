@@ -1,5 +1,7 @@
 # Watchdog — POSIX signal-based process monitor
 
+> **📄 Project report: [REPORT.pdf](REPORT.pdf)** (also in [`docs/REPORT.pdf`](docs/REPORT.pdf), source: [`docs/REPORT.md`](docs/REPORT.md))
+
 `watchdog` is a small supervisor written in C for Linux/POSIX systems. It starts a
 set of child processes, watches them with signals, restarts the ones that fail
 (up to 3 times each), prints a status report on demand and shuts everything down
