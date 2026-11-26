@@ -343,6 +343,9 @@ Output of `git log --pretty=format:"%h %an %ad %s" --date=short` on `main`
 after all modules and the final documentation were merged (26.11.2026).
 
 ```
+(this commit) ZiyadAlboghdady 2026-11-26 docs: refresh commit history in report (#15)
+3001995 ZiyadAlboghdady 2026-11-26 docs: correct Ziyad's student number in report (#15)
+3c4b815 ZiyadAlboghdady 2026-11-26 docs: add student numbers and final commit history to report (#15)
 1c09b52 AlperYildrm 2026-11-26 Merge pull request #22 from AlperYildrm/s3-final
 b12b5f0 ZiyadAlboghdady 2026-11-25 docs: add project report (REPORT.md source and REPORT.pdf) (#15)
 bf765fa ZiyadAlboghdady 2026-11-25 docs: document default workers, run directory and real status report in README (#15)
