@@ -5,7 +5,13 @@ subtitle: "BSM308 / SWE-301 System Programming, Term Project 1"
 
 **Sakarya University, November 2026**
 
-**Team:** Alper Yıldırım (AlperYildrm), Ammar Al Baghajati (Ammarito9), Ziyad Alboghdady (ziyad-alboghdady)
+**Team:**
+
+| Student | Student no. | GitHub |
+|---|---|---|
+| Alper Yıldırım | B231202001 | AlperYildrm |
+| Ammar Al Baghajati | B231202553 | Ammarito9 |
+| Ziyad Alboghdady | B23120250 | ziyad-alboghdady |
 
 **Public repository:** <https://github.com/AlperYildrm/sysprog-project>
 
@@ -141,11 +147,11 @@ and `worker_4` (stubborn).
 
 # 3. Task distribution
 
-| Student | GitHub | Issues | Files |
-|---|---|---|---|
-| S1 Alper Yıldırım | AlperYildrm | #1-#4, #16 | `include/signal_manager.h`, `src/signal_manager.c`, `src/main.c` |
-| S2 Ammar Al Baghajati | Ammarito9 | #5-#9, #16 | `include/process_manager.h`, `src/process_manager.c` |
-| S3 Ziyad Alboghdady | ziyad-alboghdady | #10-#15, #16 | `include/logger.h`, `src/logger.c`, `workers/worker.c`, `Makefile`, `tests/test_scenarios.sh`, `README.md`, `docs/REPORT.pdf` |
+| Student | Student no. | GitHub | Issues | Files |
+|---|---|---|---|---|
+| S1 Alper Yıldırım | B231202001 | AlperYildrm | #1-#4, #16 | `include/signal_manager.h`, `src/signal_manager.c`, `src/main.c` |
+| S2 Ammar Al Baghajati | B231202553 | Ammarito9 | #5-#9, #16 | `include/process_manager.h`, `src/process_manager.c` |
+| S3 Ziyad Alboghdady | B23120250 | ziyad-alboghdady | #10-#15, #16 | `include/logger.h`, `src/logger.c`, `workers/worker.c`, `Makefile`, `tests/test_scenarios.sh`, `README.md`, `docs/REPORT.pdf` |
 
 Each module was developed on its own branch by its owner and merged into `main`
 through a pull request (#17-#21 and later).
@@ -334,10 +340,14 @@ $ pgrep -a -x worker; ps -eo pid,ppid,stat,args | awk '$3 ~ /^Z/ && /worker/'
 # 6. Commit history
 
 Output of `git log --pretty=format:"%h %an %ad %s" --date=short` on `main`
-after all three modules were merged (25.11.2026). The final integration commits
-(sample logs, README update and this report) follow on top of this history.
+after all modules and the final documentation were merged (26.11.2026).
 
 ```
+1c09b52 AlperYildrm 2026-11-26 Merge pull request #22 from AlperYildrm/s3-final
+b12b5f0 ZiyadAlboghdady 2026-11-25 docs: add project report (REPORT.md source and REPORT.pdf) (#15)
+bf765fa ZiyadAlboghdady 2026-11-25 docs: document default workers, run directory and real status report in README (#15)
+d9a9dba ZiyadAlboghdady 2026-11-25 test: add sample logs and output from the integrated test run (#14)
+8068595 ZiyadAlboghdady 2026-11-25 fix(logger): close the log descriptor once instead of retrying on EINTR (#10)
 9c11576 AlperYildrm 2026-11-25 Merge pull request #21 from AlperYildrm/implemetation-of-main.c
 35e85ec AlperYildrm 2026-11-25 Implementing graceful shutdown and main control loop via main.c
 3ecdcec Ammar Al Baghajati 2026-11-25 Merge pull request #20 from AlperYildrm/s2-ammar
